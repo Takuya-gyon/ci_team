@@ -1,19 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import FudaiMap from './FudaiMap';
+import TabComponent from './TabComponent';
+import { tabs } from './TabsData';
+import './App.css'; // スタイルシートのインポート
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <div>
-          あああああっくう
-        </div>
-      </header>
+    <div>
+      <TabComponent tabs={tabs} />
     </div>
   );
 }
