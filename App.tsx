@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import korituPhoto from './koritu.jpg';
+import B4Photo from './B4.jpg';
+import syokudoPhoto from './syokudo.jpg';
 import tizuPhoto from './tizu.jpg'; // tizu.jpgをインポート
 
 interface Weather {
@@ -11,43 +12,57 @@ interface Weather {
 }
 
 function App() {
-  const [showKorituPhoto, setShowKorituPhoto] = useState(false);
+  const [showB4Photo, setShowB4Photo] = useState(false);
+const [showsyokudoPhoto, setShowsyokudoPhoto] = useState(false);
   const [showTizuPhoto, setShowTizuPhoto] = useState(true); // tizuPhotoの表示のstate
   const [showRoute, setShowRoute] = useState(false);
  
-  const [weather, setWeather] = useState<Weather | null>(null); 
+  const [weather, setWeather] = useState<Weather | null>(null);
   useEffect(() => {
-    // ここに天気情報を取得するためのAPI呼び出しを書きます
-    // この例では、フェイクのJSONデータを直接設定しています
-    const fakeWeatherData = {
-      location: 'OMU Nakamozu',
-      temperature: '10',
-      description: 'Cloudy'
+    const fetchWeather = async () => {
+      const apiKey = '67e4010a8f58b6291c5e44ec596adc1c'; // 環境変数からAPIキーを取得
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=Sakai,Naka&appid=${apiKey}&units=metric&lang=ja`;
+
+
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setWeather({
+          location: data.name,
+          temperature: data.main.temp,
+          description: data.weather[0].description
+        });
+      } catch (error) {
+        console.error("Failed to fetch weather data:", error);
+      }
     };
-    setWeather(fakeWeatherData);
+
+    fetchWeather();
   }, []);
 
   const handleKorituButtonClick = () => {
-    setShowKorituPhoto(true);
+    setShowB4Photo(true);
+    setShowsyokudoPhoto(true);
     setShowRoute(true);
   };
 
   const photoStyle: React.CSSProperties = {
   width: '800px',
   height: '500px',
-  position: 'absolute' as 'absolute',
+  position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   };
 
 // koritu.jpg用の新しいスタイル
-  const korituPhotoStyle: React.CSSProperties = {
+  const B4PhotoStyle: React.CSSProperties = {
   width: '130px', // 例えば幅を400pxにする
   height: '160px',
   position: 'absolute',
-  top: '75%', // 位置を少し変える
-  left: '58%',
+  top: '65%', // 位置を少し変える
+  left: '54%',
   transform: 'translate(-50%, -60%)', // 中央寄せを調整
   zIndex: 1000, // これにより最前面に表示
   };
@@ -56,15 +71,35 @@ function App() {
     width: '100%', // コンテナの幅を親に合わせる
     textAlign: 'center', // 画像を中央に配置
   };
+  const syokudoPhotoStyle: React.CSSProperties = {
+  width: '130px', // 例えば幅を400pxにする
+  height: '160px',
+  position: 'absolute',
+  top: '70%', // 位置を少し変える
+  left: '81%',
+  transform: 'translate(-50%, -60%)', // 中央寄せを調整
+  zIndex: 1000, // これにより最前面に表示
+  };
+
 
   // 横向き経路線のスタイル
    const horizontalRouteStyle: React.CSSProperties = {
     position: 'absolute',
-    width: '105px', // 水平線の長さ
+    width: '83px', // 水平線の長さ
     height: '5px', // 線の太さ
     backgroundColor: 'red', // 線の色
-    top: '340px', // 適切な値に調整する
+    top: '360px', // 適切な値に調整する
     left: '680px', // 適切な値に調整する
+    zIndex: 2, // 地図の上に表示
+  };
+
+  const horizontalRouteStyle2: React.CSSProperties = {
+    position: 'absolute',
+    width: '20px', // 水平線の長さ
+    height: '5px', // 線の太さ
+    backgroundColor: 'red', // 線の色
+    top: '280px', // 適切な値に調整する
+    left: '765px', // 適切な値に調整する
     zIndex: 2, // 地図の上に表示
   };
 
@@ -72,19 +107,19 @@ function App() {
   const verticalRouteStyle: React.CSSProperties = {
     position: 'absolute',
     width: '5px', // 線の太さ
-    height: '300px', // 垂直線の長さ
+    height: '280px', // 垂直線の長さ
     backgroundColor: 'red', // 線の色
-    top: '340px', // 水平線の終点からの適切な値に調整する
+    top: '360px', // 水平線の終点からの適切な値に調整する
     left: '680px', // 水平線の終点と同じに調整する
     zIndex: 2, // 地図の上に表示
   };
   const verticalRouteStyle2: React.CSSProperties = {
     position: 'absolute',
     width: '5px', // 線の太さ
-    height: '200px', // 垂直線の長さ
+    height: '210px', // 垂直線の長さ
     backgroundColor: 'red', // 線の色
-    top: '140px', // 水平線の終点からの適切な値に調整する
-    left: '780px', // 水平線の終点と同じに調整する
+    top: '155px', // 水平線の終点からの適切な値に調整する
+    left: '763px', // 水平線の終点と同じに調整する
     zIndex: 2, // 地図の上に表示
   };
   const buttonStyle: React.CSSProperties = {
@@ -100,29 +135,33 @@ function App() {
 
 
       {/* 写真の表示 */}
-      {showKorituPhoto && (
-        <img src={korituPhoto} alt="Koritu" style={korituPhotoStyle} />
+      {showB4Photo && (
+        <img src={B4Photo} alt="B4" style={B4PhotoStyle} />
+      )}
+      {/* 写真の表示 */}
+      {showsyokudoPhoto && (
+        <img src={syokudoPhoto} alt="syokudo" style={syokudoPhotoStyle} />
       )}
       
       {weather && (
         <div style={{ padding: '20px', backgroundColor: '#ddd', marginTop: '20px' }}>
-          <h2>Weather Information</h2>
-          <p>Location: {weather.location}</p>
-          <p>Temperature: {weather.temperature}℃</p>
-          <p>Description: {weather.description}</p>
-        </div>
-      )}
+        <h3> {weather.location}の天気</h3>
+        <p>気温: {weather.temperature}°C</p>
+        <p>天候: {weather.description}</p>
+      </div>
+    )}
 
       {/* 地図と経路線の表示 */}
       <div style={imageContainerStyle}>
         <img src={tizuPhoto} alt="Tizu" className="Map-image" />
         {showRoute && <div style={horizontalRouteStyle}></div>}
+        {showRoute && <div style={horizontalRouteStyle2}></div>}
         {showRoute && <div style={verticalRouteStyle}></div>}
         {showRoute && <div style={verticalRouteStyle2}></div>}
       </div>
       
       <button onClick={handleKorituButtonClick} style={buttonStyle}>
-        Show Koritu Photo
+        Show Photos and Routes
       </button>
     </div>
   );
