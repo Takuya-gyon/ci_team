@@ -1,12 +1,13 @@
 import React from 'react';
-import FudaiMap from './FudaiMap';
 import TabComponent from './TabComponent';
+import Title from './Title';
 import { tabs } from './TabsData';
 import './App.css'; // スタイルシートのインポート
 
 function App() {
   return (
     <div>
+      <Title/>
       <TabComponent tabs={tabs} />
     </div>
   );

@@ -42,7 +42,7 @@ function App() {
             <h2>B4棟</h2>
             <img src={b4_image} alt="Modal" className="modal-image" />
             <ul>
-              <li>工学域の研究室が主にあるテストテスト</li>
+              <li>工学域の研究室が主にある</li>
               <li>専門分野の授業が行われる</li>
             </ul>
           </div>

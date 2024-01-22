@@ -1,0 +1,19 @@
+.tab-item {
+    float: left;
+    background-color: rgb(196, 196, 196);
+
+    margin: 0 auto;
+    font-size: 40px;
+    font-weight: bold;
+    width: 200px;
+    height: 60px;
+}
+.tab-item.active {
+    background-color: rgb(252, 239, 62);
+}
+.tab-content {
+    float: left;
+}
+.tab-list {
+    height: 60px;
+}

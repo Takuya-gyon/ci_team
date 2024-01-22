@@ -1,6 +1,7 @@
 // TabComponent.tsx
 import React, { useState } from 'react';
 import { Tab } from './TabsData';
+import './TabComponent.css';
 
 interface TabComponentProps {
   tabs: Tab[];
@@ -26,6 +27,7 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabs }) => {
           </div>
         ))}
       </div>
+      <div></div>
       <div className="tab-content">
         {tabs[activeTab].content}
       </div>
