@@ -1,11 +1,13 @@
 import React from 'react';
-//import './App.css'; // スタイルシートのインポート
-import pin_image from './assets/公立大ピン.png';
+import './MapPin.css';
+import pin_image from './assets/pin_image.png';
 
-function MapPin() {
+function MapPin(props: any) {
+
   return (
-    <div className="pin-wrapper">
-      <img src={pin_image}/>
+    <div className="pin-wrapper" style={props.style}>
+      <img src={pin_image} className='pin-image' onClick={props.onClick}/>
+      <div className='pin-name'>{props.name}</div>
     </div>
   );
 }

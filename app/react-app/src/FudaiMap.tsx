@@ -3,6 +3,7 @@ import './FudaiMap.css'; // スタイルシートのインポート
 import map_image from './assets/nakamozuMap.png'; // 画像のインポート
 import pin_image from './assets/公立大ピン.png';
 import b4_image from './assets/b4.png'; // 画像のインポート
+import MapPin from './MapPin';
 
 function FudaiMap() {
   const [isModalOpen1, setModalOpen1] = useState(false);
@@ -25,14 +26,11 @@ function FudaiMap() {
   };
 
   return (
-    <div className="App">
-      <img src={map_image} alt="Background" className="background-image" />
+    <div className="fudaiMap-container">
+      <img src={map_image} alt="Background" className="fudaimap-image" />
       
-      <img src={pin_image} className='image-button1' onClick={showModal1}></img>
-
-      <button className="image-button2" onClick={showModal2}>
-        食堂
-      </button>
+      <MapPin name={"B4"} style={{left: "61.7%", top: "5.5%"}} onClick={showModal1}/>
+      <MapPin name={"食堂"} style={{left: "67%", top: "36%"}} onClick={showModal2}/>
 
       {isModalOpen1 && (
         <div className="modal">
