@@ -3,7 +3,7 @@ import './IchidaiMap.css'; // スタイルシートのインポート
 import map_image from './assets/sugimotoMap.png'; // 画像のインポート
 import b4_image from './assets/b4.png'; // 画像のインポート
 
-function App() {
+function IchidaiMap() {
   const [isModalOpen1, setModalOpen1] = useState(false);
   const [isModalOpen2, setModalOpen2] = useState(false);
 
@@ -66,4 +66,4 @@ function App() {
   );
 }
 
-export default App;
+export default IchidaiMap;

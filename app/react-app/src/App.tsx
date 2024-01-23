@@ -6,9 +6,11 @@ import './App.css'; // スタイルシートのインポート
 
 function App() {
   return (
-    <div>
+    <div id="main-wrapper">
       <Title/>
-      <TabComponent tabs={tabs} />
+      <div id="content-wrapper">
+        <TabComponent tabs={tabs}/>
+      </div>
     </div>
   );
 }

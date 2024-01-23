@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './FudaiMap.css'; // スタイルシートのインポート
 import map_image from './assets/nakamozuMap.png'; // 画像のインポート
+import pin_image from './assets/公立大ピン.png';
 import b4_image from './assets/b4.png'; // 画像のインポート
 
-function App() {
+function FudaiMap() {
   const [isModalOpen1, setModalOpen1] = useState(false);
   const [isModalOpen2, setModalOpen2] = useState(false);
 
@@ -27,9 +28,7 @@ function App() {
     <div className="App">
       <img src={map_image} alt="Background" className="background-image" />
       
-      <button className="image-button1" onClick={showModal1}>
-        B4
-      </button>
+      <img src={pin_image} className='image-button1' onClick={showModal1}></img>
 
       <button className="image-button2" onClick={showModal2}>
         食堂
@@ -66,4 +65,4 @@ function App() {
   );
 }
 
-export default App;
+export default FudaiMap;

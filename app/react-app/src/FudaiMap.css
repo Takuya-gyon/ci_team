@@ -15,10 +15,8 @@
     position: absolute;
     top: 14%; /* 位置は画像に応じて調整 */
     left: 60%; /* 位置は画像に応じて調整 */
-    width: 150px;
-    height: 50px;
+    height: 70px;
     font-size: 20px;
-    transform: translate(-50%, -50%);
   }
   
   .image-button2 {

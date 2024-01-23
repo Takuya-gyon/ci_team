@@ -15,7 +15,7 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabs }) => {
   };
 
   return (
-    <div>
+    <div className='map-wrapper'>
       <div className="tab-list">
         {tabs.map((tab, index) => (
           <div
