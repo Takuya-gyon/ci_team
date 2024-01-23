@@ -1,0 +1,21 @@
+.tab-item {
+    float: left;
+    background-color: rgb(196, 196, 196);
+    cursor: default;
+
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    width: 200px;
+    height: 60px;
+    max-width: calc(100% / 2);
+}
+.tab-item.active {
+    background-color: rgb(252, 239, 62);
+}
+.tab-list {
+    height: 60px;
+}
+#map-wrapper {
+    margin:0 auto;
+}

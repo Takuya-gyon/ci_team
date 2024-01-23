@@ -1,19 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TabComponent from './TabComponent';
+import Title from './Title';
+import { tabs } from './TabsData';
+import './App.css'; // スタイルシートのインポート
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <div>
-          あああああっくう
-        </div>
-      </header>
+    <div id="main-wrapper">
+      <Title/>
+      <div id="content-wrapper">
+        <TabComponent tabs={tabs}/>
+      </div>
     </div>
   );
 }
