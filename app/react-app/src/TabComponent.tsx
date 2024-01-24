@@ -15,7 +15,7 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabs }) => {
   };
 
   return (
-    <div className='map-wrapper'>
+    <div id='map-wrapper'>
       <div className="tab-list">
         {tabs.map((tab, index) => (
           <div
@@ -27,7 +27,6 @@ const TabComponent: React.FC<TabComponentProps> = ({ tabs }) => {
           </div>
         ))}
       </div>
-      <div></div>
       <div className="tab-content">
         {tabs[activeTab].content}
       </div>
