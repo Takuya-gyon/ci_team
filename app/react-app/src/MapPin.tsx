@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './MapPin.css';
 import pin_image from './assets/pin_image.png';
-import detailFile from './assets/nakamozu_detail.json';
+import detailFile from './assets/detail.json';
 
 interface mapPinProps {
   detailId: string;
@@ -10,6 +10,7 @@ interface mapPinProps {
 
 interface DetailList {
   [key: string]: {
+    pinLabel: string;
     name: string;
     imageName: string;
     explain: string[];
@@ -31,7 +32,7 @@ const MapPin:React.FC<mapPinProps> = (props) => {
   return (
     <div className="pin-wrapper" style={props.style}>
       <img src={pin_image} className='pin-image' onClick={showModal}/>
-      <div className='pin-name'>{detail.name}</div>
+      <div className='pin-name'>{detail.pinLabel}</div>
 
       {isModalOpen && (
         <div className="modal">

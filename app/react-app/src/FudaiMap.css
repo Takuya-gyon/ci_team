@@ -11,24 +11,6 @@
   height: 100%;
 }
 
-.image-button1 {
-  position: absolute;
-  top: 14%; /* 位置は画像に応じて調整 */
-  left: 60%; /* 位置は画像に応じて調整 */
-  height: 70px;
-  font-size: 20px;
-}
-
-.image-button2 {
-  position: absolute;
-  top: 45%; /* 位置は画像に応じて調整 */
-  left: 63%; /* 位置は画像に応じて調整 */
-  width: 150px;
-  height: 50px;
-  font-size: 20px;
-  transform: translate(-50%, -50%);
-}
-
 /* モーダルウィンドウのスタイル */
 .modal {
   display: block;

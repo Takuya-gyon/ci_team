@@ -1,6 +1,6 @@
 .tab-item {
     float: left;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(205, 209, 208);
     cursor: default;
 
     text-align: center;
@@ -11,7 +11,7 @@
     max-width: calc(100% / 2);
 }
 .tab-item.active {
-    background-color: rgb(252, 239, 62);
+    background-color: rgb(243, 203, 45);
 }
 .tab-list {
     height: 60px;
