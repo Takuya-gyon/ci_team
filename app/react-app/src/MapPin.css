@@ -7,11 +7,12 @@
 }
 .pin-name {
     cursor: default;
-    width: 100px;
+    width: 150px;
 
     line-height: 100%;
     text-align: left;
     font-size: 15px;
     font-weight: bold;
     color: black;
+    -webkit-text-stroke: 0.6px white;
 }
