@@ -1,3 +1,7 @@
 .sakai-weater-container {
     background-color: rgb(205, 209, 208);
+    border-bottom: 3px solid rgb(243, 203, 45);
+    text-align: center;
+    font-size: 30px;
+    line-height: 100%;
 }

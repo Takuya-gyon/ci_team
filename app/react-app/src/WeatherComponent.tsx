@@ -34,9 +34,9 @@ function WeatherComponent() {
     <div id="wheather-wrapper">
       {weather && (
         <div className="sakai-weater-container">
-          <h3> {weather.location}の天気</h3>
+          <h3 style={{position: 'relative', top: '10px'}}> {weather.location}の天気</h3>
           <p>気温: {weather.temperature}°C</p>
-          <p>天候: {weather.description}</p>
+          <p style={{position: 'relative', bottom: '20px'}}>天候: {weather.description}</p>
         </div>
       )}
     </div>
