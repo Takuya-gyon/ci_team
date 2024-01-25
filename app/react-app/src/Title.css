@@ -1,3 +1,6 @@
+.title-container {
+    border-bottom: 3px solid rgb(243, 203, 45);
+}
 .title {
     font-size: 70px;
     font-weight: bold;
