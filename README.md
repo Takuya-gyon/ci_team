@@ -7,7 +7,7 @@
 https://hub.docker.com/r/tkucd/ci_team-app
 ```
 ただし本アプリケーションの環境構築はレポジトリ内にあるDockerfileおよびdocker-compose.ymlを用いることで行われます。<br>
-そのため上記リンクに示すImageをpullして`docker run`コマンドによりコンテナを作成するのではなく、下記に示す`docker compose`コマンドによりコンテナの作成をお願いいたします。
+そのため上記リンクに示すイメージをpullして`docker run`コマンドによりコンテナを作成するのではなく、下記に示す`docker compose`コマンドによりコンテナの作成をお願いいたします。
 
 ## 大阪公立大ありのままっぷの使い方
 以下ではローカル環境での実行手順を記載します。
